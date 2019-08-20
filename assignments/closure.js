@@ -41,7 +41,7 @@ console.log(myCounter()); // 1
 console.log(myCounter()); // 2
 console.log(myCounter()); // 3
 console.log(myCounter()); // 4
-console.log(myCounter()); // 5
+console.log(myCounter()); // 0
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
