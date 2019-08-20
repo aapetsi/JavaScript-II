@@ -89,7 +89,19 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// We can find the average ticket price using the .reduce() method
+let averageTicketPrice = runners.reduce((accumulator, runner) => {
+  return accumulator += runner.donation
+}, 0) / runners.length
+console.log(averageTicketPrice)
 
 // Problem 2
+// We can get all runners who use a particular email domain eg: yahoo.com
+let commonEmailHolders = runners.filter(runner => {
+  let emailDomain = runner.email.split("@")[1].split(".")[0]
+  // console.log(emailDomain)
+  return emailDomain === "yale"
+})
+console.log(commonEmailHolders)
 
 // Problem 3
