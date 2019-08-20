@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', "Gum"];
 
 /* 
 
@@ -40,30 +40,56 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  return cb(arr.length)
   // getLength passes the length of the array into the callback.
 }
+console.log(getLength(items, (len) => {
+  return len
+}))
 
 function last(arr, cb) {
+  return cb(arr[arr.length - 1])
   // last passes the last item of the array into the callback.
 }
+console.log(last(items, (lastItem) => {
+  return lastItem
+}))
 
 function sumNums(x, y, cb) {
+  let sum = x + y
+  return cb(sum)
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+console.log(sumNums(3, 4, res => {
+  return res
+}))
 
 function multiplyNums(x, y, cb) {
+  let product = x * y;
+  return cb(product)
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+console.log(multiplyNums(4, 6, res => {
+  return res
+}))
 
 function contains(item, list, cb) {
+  return cb(list.includes(item))
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+console.log(contains("Gum", items, res => {
+  return res
+}))
 
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
+  let newArray = array.filter((item, index) => array.indexOf(item) === index)
+  return cb(newArray)
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+
+console.log(removeDuplicates(items, (res) => res))
