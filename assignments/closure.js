@@ -4,6 +4,13 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let addBy = 5
+function addBy5(a,b) {
+  return a + b + addBy
+}
+
+console.log(addBy5(5,4))
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
