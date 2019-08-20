@@ -92,4 +92,9 @@ function removeDuplicates(array, cb) {
   // Do not mutate the original array.
 }
 
-console.log(removeDuplicates(items, (res) => res))
+console.log(removeDuplicates(items, (res) => res));
+
+// IIFE
+(function multiply(a, b) {
+  console.log(a * b)
+})(4, 5)
