@@ -16,13 +16,18 @@ console.log(addBy5(5, 4))
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
-const counterMaker = () => {
+const counterMaker = (limit) => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   let count = 0;
   // 2- Declare a function `counter`. It should increment and return `count`.
   return function counter() {
-    return count++;
+    if (count < limit) {
+      return count++
+    } else {
+      return count = 0;
+      // return counter();
+    }
   }
 
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
@@ -30,10 +35,13 @@ const counterMaker = () => {
   // 3- Return the `counter` function.
 };
 // Example usage: 
-const myCounter = counterMaker();
+const myCounter = counterMaker(5);
 console.log(myCounter())
 console.log(myCounter()); // 1
 console.log(myCounter()); // 2
+console.log(myCounter()); // 3
+console.log(myCounter()); // 4
+console.log(myCounter()); // 5
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
